@@ -5,13 +5,13 @@ import java.util.Date;
 public class Todo {
 
     private long id;
-    private String descrition, username;
+    private String description, username;
     private Date targetDate;
     private boolean isDone;
 
     public Todo(long id, String descrition, String username, Date targetDate, boolean isDone) {
         this.id = id;
-        this.descrition = descrition;
+        this.description = descrition;
         this.username = username;
         this.targetDate = targetDate;
         this.isDone = isDone;
@@ -25,12 +25,12 @@ public class Todo {
         this.id = id;
     }
 
-    public String getDescrition() {
-        return descrition;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescrition(String descrition) {
-        this.descrition = descrition;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getUsername() {
