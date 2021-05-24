@@ -24,4 +24,31 @@ public class TodoService {
     public List<Todo> findAll(){
         return todos;
     }
+
+    public Todo deleteById(long id){
+        Todo todo = findById(id);
+        if(todo == null)
+            return null;
+        todos.remove(todo);
+//On Successful deletion return the object otherwise return null
+        if(todos.remove(todo)) {
+            return todo;
+        }
+
+        return null;
+
+    }
+
+//    To find a task in the list by ID
+    public Todo findById(long id) {
+        for(Todo todo: todos)
+        {
+            if(todo.getId()==id)
+            {
+                return todo;
+            }
+        }
+        return null;
+
+    }
 }
