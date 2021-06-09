@@ -29,7 +29,7 @@ public class TodoService {
         Todo todo = findById(id);
         if(todo == null)
             return null;
-        todos.remove(todo);
+
 //On Successful deletion return the object otherwise return null
         if(todos.remove(todo)) {
             return todo;
@@ -51,4 +51,25 @@ public class TodoService {
         return null;
 
     }
+
+/* Function to add todos to list of todos
+*  @Params: a todo object
+*  @Return: returns a todo object
+* */
+    public Todo save(Todo todo)
+    {
+        if(todo.getId() == 0)
+        {
+            todo.setId(++idCounter);
+            todos.add(todo);
+        }
+        else
+        {
+            deleteById(todo.getId());
+            todos.add(todo);
+        }
+        return todo;
+    }
+
+
 }
